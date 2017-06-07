@@ -1,17 +1,14 @@
 import glob
 import pandas as pd
 
-states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
-          "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
-          "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
-          "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
-          "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+ # echo 'State,Gender,Year,Name,Frequency' >00.TXT
+ # cat 00.TXT
+ # cat *.TXT >combined.csv # creating one big file
+ # wc -l combined.csv # wc word count, can also count lines
 
-dfs = [pd.read_csv('/Users/johannafulghum/Documents/Metis/namesbystate/' + state + ".TXT")
-        for state in states]
+df = pd.read_csv("combined.csv")
 
-df = pd.concat(dfs)
-print(df)
+print(df.head)
 
 # df2 = pd.read_csv('/Users/johannafulghum/Documents/Metis/namesbystate/' + states[0] +'.TXT')
 # for state in states[1:]:
